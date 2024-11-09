@@ -11,12 +11,12 @@ RSpec.configure do |config|
 
       time = Time.now.strftime('%Y-%m-%d_%H-%M-%S')
       filename = "screenshots/#{time}_#{example.description.gsub(' ', '_')}.png"
-      page.save_screenshot(filename) 
+      @driver.save_screenshot(filename)
       #@driver.save_screenshot(filename) # without DSL
     end
   end
 end
 
-Capybara.default_driver =  :selenium_edge_headless
-#Capybara.default_driver =  :selenium
+#Capybara.default_driver =  :selenium_edge_headless
+Capybara.default_driver =  :selenium
 Capybara.app_host =  'https://www.saucedemo.com/'

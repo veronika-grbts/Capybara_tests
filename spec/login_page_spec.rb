@@ -56,7 +56,7 @@ RSpec.describe 'Login Tests' do
   end
   
   def set_text_to_field(field, text)
-    fill_in field, with: text
+    @driver.fill_in field, with: text
   end
   
   def add_to_cart_item_by_id(id)
